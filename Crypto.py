@@ -1,6 +1,7 @@
 import modules.euclidean as Euclidean
 import modules.block_cipher as BlockCipher
 import modules.permute as Permute
+import modules.block_cipher_calculation as BlockCipherCalculation
 import os
 
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
@@ -11,6 +12,7 @@ possibilities = {
   "Greatest Common Devider": Euclidean.GreatestCommonDevider(),
   "Block Cipher (AES)": BlockCipher.AESBlockCipher(),
   "Permute": Permute.Permute(),
+  "Block Cipher (Calculation": BlockCipherCalculation.BlockCipher(),
 }
 
 possible_modules = []

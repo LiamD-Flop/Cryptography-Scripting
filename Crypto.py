@@ -1,5 +1,6 @@
 import modules.euclidean as Euclidean
 import modules.block_cipher as BlockCipher
+import modules.permute as Permute
 import os
 
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
@@ -9,6 +10,7 @@ possibilities = {
   "Extended Euclidean": Euclidean.ExtendedEuclidean(),
   "Greatest Common Devider": Euclidean.GreatestCommonDevider(),
   "Block Cipher (AES)": BlockCipher.AESBlockCipher(),
+  "Permute": Permute.Permute(),
 }
 
 possible_modules = []
@@ -46,7 +48,7 @@ def ChooseModule():
     i += 1
 
 def init():
-  arguments = {}
+  arguments.clear()
   clearConsole()
   todo = input("What do you want to do:\n1: Select a module\n2: Derrive a module from arguments\nSelect: ")
   clearConsole()

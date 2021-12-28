@@ -43,9 +43,6 @@ class GreatestCommonDevider(Calculate):
   def calculate(self, args):
     super().calculate(args)
 
-    b = int(args["b"])
-    n = int(args["n"])
-
     g, x, y = ExtendedEuclidean().calculate(args)
     return g
 
@@ -66,7 +63,6 @@ class MultiplicativeInverse(Calculate):
     #
     super().calculate(args)
 
-    b = int(args["b"])
     n = int(args["n"])
 
     g, x, y = ExtendedEuclidean().calculate(args)

@@ -2,6 +2,7 @@ import modules.euclidean as Euclidean
 import modules.block_cipher as BlockCipher
 import modules.permute as Permute
 import modules.block_cipher_calculation as BlockCipherCalculation
+import modules.stream_cipher as StreamCipher
 import os
 
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
@@ -12,7 +13,8 @@ possibilities = {
   "Greatest Common Devider": Euclidean.GreatestCommonDevider(),
   "Block Cipher (AES)": BlockCipher.AESBlockCipher(),
   "Permute": Permute.Permute(),
-  "Block Cipher (Calculation": BlockCipherCalculation.BlockCipher(),
+  "Block Cipher (Calculation)": BlockCipherCalculation.BlockCipher(),
+  "Stream Cipher": StreamCipher.StreamCipher(),
 }
 
 possible_modules = []
@@ -63,7 +65,10 @@ def init():
 
   module_to_run = input("Module: ")
 
-  print("\n", possible_modules[int(module_to_run)].calculate(arguments))
+  result = possible_modules[int(module_to_run)].calculate(arguments)
+
+  for k, v in result.items():
+    print(f"The %s is: %s" % (k, v))
   
   if input("Continue? (Y/n)").lower() == "n":
     print("Goodbye...")

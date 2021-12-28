@@ -16,6 +16,10 @@ class BlockCipher(Calculate):
     permutation = ast.literal_eval(args["permutation sequence"])
 
     per = permute.permute(sbox, permutation)
-    cipher = xor(per, key)
+    cipher = hex(xor(per, key))
 
-    return hex(cipher)
+    result = {
+        "cipher": cipher
+    }
+
+    return result

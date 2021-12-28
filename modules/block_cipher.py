@@ -13,4 +13,9 @@ class AESBlockCipher(Calculate):
     d = int(args["d"], 16)
     p = int(args["p"], 16)
 
-    return hex(xor(xor(d, c), p))
+    nonce = hex(xor(xor(d, c), p))
+    result = {
+      "nonce": nonce,
+    }
+
+    return result

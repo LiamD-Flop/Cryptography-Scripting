@@ -1,5 +1,6 @@
 import modules.euclidean as Euclidean
 import modules.block_cipher as BlockCipher
+import modules.block_cipher_calculation as BlockCipherCalculation
 import os
 
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
@@ -9,6 +10,7 @@ possibilities = {
   "Extended Euclidean": Euclidean.ExtendedEuclidean(),
   "Greatest Common Devider": Euclidean.GreatestCommonDevider(),
   "Block Cipher (AES)": BlockCipher.AESBlockCipher(),
+  "Block Cipher (Calculation": BlockCipherCalculation.BlockCipher(),
 }
 
 possible_modules = []

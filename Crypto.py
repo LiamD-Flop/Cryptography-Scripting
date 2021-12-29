@@ -3,6 +3,7 @@ import modules.block_cipher as BlockCipher
 import modules.permute as Permute
 import modules.block_cipher_calculation as BlockCipherCalculation
 import modules.stream_cipher as StreamCipher
+import modules.stream_cipher_lfsr as StreamCipherLFSR
 import os
 
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
@@ -15,6 +16,7 @@ possibilities = {
   "Permute": Permute.Permute(),
   "Block Cipher (Calculation)": BlockCipherCalculation.BlockCipher(),
   "Stream Cipher": StreamCipher.StreamCipher(),
+  "Stream Cipher LFSR": StreamCipherLFSR.StreamCipherLFSR(),
 }
 
 possible_modules = []
@@ -66,6 +68,8 @@ def init():
   module_to_run = input("Module: ")
 
   result = possible_modules[int(module_to_run)].calculate(arguments)
+
+  print(result)
 
   for k, v in result.items():
     print(f"The %s is: %s" % (k, v))

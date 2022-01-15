@@ -4,6 +4,7 @@ import modules.permute as Permute
 import modules.block_cipher_calculation as BlockCipherCalculation
 import modules.stream_cipher as StreamCipher
 import modules.stream_cipher_lfsr as StreamCipherLFSR
+import modules.rsa as RSA
 import os
 
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
@@ -17,6 +18,8 @@ possibilities = {
   "Block Cipher (Calculation)": BlockCipherCalculation.BlockCipher(),
   "Stream Cipher": StreamCipher.StreamCipher(),
   "Stream Cipher LFSR": StreamCipherLFSR.StreamCipherLFSR(),
+  "RSA Encrypt": RSA.Encrypt(),
+  "RSA Decrypt": RSA.Decrypt(),
 }
 
 possible_modules = []

@@ -11,7 +11,7 @@ class StreamCipher(Calculate):
     super().calculate(args)
 
     if (args["stream"] != ""):
-      stream = hex(args["stream"])
+      stream = args["stream"]
     else:
       try:
         key = int(args["key"])

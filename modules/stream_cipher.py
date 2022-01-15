@@ -5,12 +5,21 @@ import random
 class StreamCipher(Calculate):
   def __init__(self) -> None:
     super().__init__()
-    self.requirements = ["input"]
+    self.requirements = ["input", "seed", "key"]
 
   def calculate(self, args):
     super().calculate(args)
-    random.seed(1000)
-    stream = hex(random.getrandbits(1000))
+
+    if (args["seed"] != ""):
+      stream = hex(args["seed"])
+    else:
+      try:
+        key = int(args["key"])
+      except:
+        key = 1000
+      random.seed(key)
+      stream = hex(random.getrandbits(1000))
+
     plain = int(args["input"], 16)
     parts = int(stream[:len(hex(plain))], 16)
     cipher = xor(plain, parts)

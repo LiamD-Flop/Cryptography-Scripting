@@ -5,13 +5,13 @@ import random
 class StreamCipher(Calculate):
   def __init__(self) -> None:
     super().__init__()
-    self.requirements = ["input", "seed", "key"]
+    self.requirements = ["input", "stream", "key"]
 
   def calculate(self, args):
     super().calculate(args)
 
-    if (args["seed"] != ""):
-      stream = hex(args["seed"])
+    if (args["stream"] != ""):
+      stream = hex(args["stream"])
     else:
       try:
         key = int(args["key"])

@@ -2,6 +2,7 @@ import modules.euclidean as Euclidean
 import modules.block_cipher as BlockCipher
 import modules.permute as Permute
 import modules.block_cipher_calculation as BlockCipherCalculation
+import modules.block_cipher_ecb as BlockCipherECB
 import modules.stream_cipher as StreamCipher
 import modules.stream_cipher_lfsr as StreamCipherLFSR
 import modules.rsa as RSA
@@ -16,6 +17,7 @@ possibilities = {
   "Block Cipher (AES)": BlockCipher.AESBlockCipher(),
   "Permute": Permute.Permute(),
   "Block Cipher (Calculation)": BlockCipherCalculation.BlockCipher(),
+  "Block Cipher (ECB)": BlockCipherECB.BlockCipherECB(),
   "Stream Cipher": StreamCipher.StreamCipher(),
   "Stream Cipher LFSR": StreamCipherLFSR.StreamCipherLFSR(),
   "RSA Encrypt": RSA.Encrypt(),

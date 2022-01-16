@@ -5,7 +5,7 @@ import random
 class StreamCipher(Calculate):
   def __init__(self) -> None:
     super().__init__()
-    self.requirements = ["input", "stream", "key"]
+    self.requirements = ["input", "stream", "seed"]
 
   def calculate(self, args):
     super().calculate(args)
@@ -14,10 +14,10 @@ class StreamCipher(Calculate):
       stream = args["stream"]
     else:
       try:
-        key = int(args["key"])
+        seed = int(args["seed"])
       except:
-        key = 1000
-      random.seed(key)
+        seed = 1000
+      random.seed(seed)
       stream = hex(random.getrandbits(1000))
 
     plain = int(args["input"], 16)
